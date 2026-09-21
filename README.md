@@ -1,7 +1,4 @@
-<!-- Animated Header -->
-
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&height=220&color=0:0F2027,50:203A43,100:2C5364&text=SARA%20DAWOOD%20S&fontSize=42&fontColor=ffffff&fontAlignY=38&animation=fadeIn&desc=Full-Stack%20Developer%20%7C%20AI%20%26%20Data%20Science%20Student&descAlignY=58&descSize=18" width="100%"/>
+ <img src="https://capsule-render.vercel.app/api?type=waving&height=220&color=0:0F2027,50:203A43,100:2C5364&text=SARA%20DAWOOD%20S&fontSize=42&fontColor=ffffff&fontAlignY=38&animation=fadeIn&desc=Full-Stack%20Developer%20%7C%20AI%20%26%20Data%20Science%20Student&descAlignY=58&descSize=18" width="100%"/>
 </p>
 
 
