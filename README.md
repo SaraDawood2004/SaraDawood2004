@@ -1,13 +1,13 @@
- <img src="https://capsule-render.vercel.app/api?type=waving&height=220&color=0:0F2027,50:203A43,100:2C5364&text=SARA%20DAWOOD%20S&fontSize=42&fontColor=ffffff&fontAlignY=38&animation=fadeIn&desc=Full-Stack%20Developer%20%7C%20AI%20%26%20Data%20Science%20Student&descAlignY=58&descSize=18" width="100%"/>
+ <img src="height=220&color=0:0F2027,50:203A43,100:2C5364&text=SARA%20DAWOOD%20S&fontSize=42&fontColor=ffffff&fontAlignY=38&animation=fadeIn&desc=Full-Stack%20Developer%20%7C%20AI%20%26%20Data%20Science%20Student&descAlignY=58&descSize=18" width="100%"/>
 </p>
 
 
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=25&duration=3000&pause=1000&color=2F81F7&center=true&vCenter=true&width=850&lines=Hi%2C+I'm+Sara+Dawood+S;Full-Stack+Developer;AI+%26+Data+Science+Student;Exploring+AI%2C+ML%2C+GenAI+%26+LLMs;Building+Intelligent+%26+Scalable+Applications" />
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=25&duration=3000&pause=1000&color=2F81F7&center=true&vCenter=true&width=850&lines=Hi%2C+I'm+Sara+Dawood+S;AI+%26+Data+Science+Student;;Full-Stack+Developer;Exploring+AI%2C+ML%2C+GenAI+%26+LLMs;Building+Intelligent+%26+Scalable+Applications" />
 
 <p>
-  <strong>Full-Stack Developer | AI & Data Science Student | AI/ML Enthusiast</strong>
+  <strong>AI & Data Science Student | Full-Stack Developer | AI/ML Enthusiast</strong>
 </p>
 
 <p>
@@ -30,11 +30,11 @@ building practical, scalable, and intelligent software solutions.
 
 <p>
 My interests lie at the intersection of
+ <strong>Full-Stack Development</strong>.
 <strong>Artificial Intelligence</strong>,
 <strong>Machine Learning</strong>,
-<strong>Generative AI</strong>,
-<strong>Data Science</strong>, and
-<strong>Full-Stack Development</strong>.
+<strong>Generative AI</strong> and
+<strong>Data Science</strong> 
 </p>
 
 <ul>
@@ -56,6 +56,23 @@ My interests lie at the intersection of
 
 <td width="50%" valign="top">
 
+<h3>Full-Stack Development</h3>
+
+<ul>
+<li>Frontend Development</li>
+<li>Backend Development</li>
+<li>RESTful APIs</li>
+<li>Authentication & Authorization</li>
+<li>Database Design</li>
+<li>API Integration</li>
+<li>Cloud Deployment</li>
+<li>Scalable Web Applications</li>
+</ul>
+
+</td>
+
+<td width="50%" valign="top">
+
 <h3>Artificial Intelligence</h3>
 
 <ul>
@@ -71,22 +88,7 @@ My interests lie at the intersection of
 
 </td>
 
-<td width="50%" valign="top">
 
-<h3>Full-Stack Development</h3>
-
-<ul>
-<li>Frontend Development</li>
-<li>Backend Development</li>
-<li>RESTful APIs</li>
-<li>Authentication & Authorization</li>
-<li>Database Design</li>
-<li>API Integration</li>
-<li>Cloud Deployment</li>
-<li>Scalable Web Applications</li>
-</ul>
-
-</td>
 
 </tr>
 </table>
@@ -205,18 +207,6 @@ My interests lie at the intersection of
 ---
 
 <h2>GitHub Statistics</h2>
-
-<p align="center">
-
-<img src="https://github-readme-stats.vercel.app/api?username=SaraDawood2004&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github" />
-
-</p>
-
-<p align="center">
-
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=SaraDawood2004&layout=compact&theme=tokyonight&hide_border=true" />
-
-</p>
 
 <p align="center">
 
