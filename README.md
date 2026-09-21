@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=3000&pause=1000&color=00BFFF&center=true&vCenter=true&width=800&lines=Hi%2C+I'm+Sara+Dawood+S;AI+%26+Data+Science+Student;Full-Stack+Developer;AI%2FML+Enthusiast;Building+Intelligent+%26+Scalable+Applications" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=3000&pause=1000&color=00BFFF&center=true&vCenter=true&width=800&lines=Hi%2C+I'm+Sara+Dawood+S;" />
 
 <p>
   <strong>AI & Data Science Student | Full-Stack Developer | AI/ML Enthusiast</strong>
