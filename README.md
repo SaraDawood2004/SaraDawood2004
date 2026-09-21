@@ -196,16 +196,6 @@ My interests lie at the intersection of
 
 ---
 
-<h2>What I'm Working Towards</h2>
-
-<p align="center">
-
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=20&duration=3000&pause=1000&color=2F81F7&center=true&vCenter=true&width=850&lines=Building+Production-Ready+Applications;Mastering+Full-Stack+Development;Exploring+Advanced+AI+%26+ML;Building+GenAI+%26+RAG+Applications;Learning+Cloud+%26+System+Design" />
-
-</p>
-
----
-
 <h2>GitHub Statistics</h2>
 
 <p align="center">
