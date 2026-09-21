@@ -1,9 +1,16 @@
+<!-- Animated Header -->
+
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&height=220&color=0:0F2027,50:203A43,100:2C5364&text=SARA%20DAWOOD%20S&fontSize=42&fontColor=ffffff&fontAlignY=38&animation=fadeIn&desc=Full-Stack%20Developer%20%7C%20AI%20%26%20Data%20Science%20Student&descAlignY=58&descSize=18" width="100%"/>
+</p>
+
+
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=3000&pause=1000&color=00BFFF&center=true&vCenter=true&width=800&lines=Hi%2C+I'm+Sara+Dawood+S;" />
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=25&duration=3000&pause=1000&color=2F81F7&center=true&vCenter=true&width=850&lines=Hi%2C+I'm+Sara+Dawood+S;Full-Stack+Developer;AI+%26+Data+Science+Student;Exploring+AI%2C+ML%2C+GenAI+%26+LLMs;Building+Intelligent+%26+Scalable+Applications" />
 
 <p>
-  <strong>AI & Data Science Student | Full-Stack Developer | AI/ML Enthusiast</strong>
+  <strong>Full-Stack Developer | AI & Data Science Student | AI/ML Enthusiast</strong>
 </p>
 
 <p>
@@ -17,7 +24,7 @@ Building intelligent applications by combining
 
 ---
 
-<h2>🚀 About Me</h2>
+<h2>About Me</h2>
 
 <p>
 I'm a B.Tech Artificial Intelligence and Data Science student passionate about
@@ -34,25 +41,25 @@ My interests lie at the intersection of
 </p>
 
 <ul>
-  <li>🎓 B.Tech Artificial Intelligence & Data Science</li>
-  <li>💻 Focused on Full-Stack Development</li>
-  <li>🤖 Interested in AI, ML, GenAI, LLMs & RAG</li>
-  <li>📊 Interested in Data Science & Analytics</li>
-  <li>🌐 Building modern web applications</li>
-  <li>🚀 Building real-world AI-powered solutions</li>
-  <li>🌱 Continuously learning and exploring new technologies</li>
+  <li>B.Tech Artificial Intelligence & Data Science</li>
+  <li>Focused on Full-Stack Development</li>
+  <li>Interested in AI, ML, GenAI, LLMs & RAG</li>
+  <li>Interested in Data Science & Analytics</li>
+  <li>Building modern web applications</li>
+  <li>Building real-world AI-powered solutions</li>
+  <li>Continuously learning and exploring new technologies</li>
 </ul>
 
 ---
 
-<h2>💡 Expertise & Interests</h2>
+<h2>Expertise & Interests</h2>
 
 <table>
 <tr>
 
 <td width="50%" valign="top">
 
-<h3>🤖 Artificial Intelligence</h3>
+<h3>Artificial Intelligence</h3>
 
 <ul>
 <li>Machine Learning</li>
@@ -69,7 +76,7 @@ My interests lie at the intersection of
 
 <td width="50%" valign="top">
 
-<h3>🌐 Full-Stack Development</h3>
+<h3>Full-Stack Development</h3>
 
 <ul>
 <li>Frontend Development</li>
@@ -89,9 +96,9 @@ My interests lie at the intersection of
 
 ---
 
-<h2>🛠️ Skills & Technologies</h2>
+<h2>Skills & Technologies</h2>
 
-<h3>💻 Programming Languages</h3>
+<h3>Programming Languages</h3>
 
 <p>
 <img src="https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white"/>
@@ -102,7 +109,7 @@ My interests lie at the intersection of
 <img src="https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white"/>
 </p>
 
-<h3>🎨 Frontend Development</h3>
+<h3>Frontend Development</h3>
 
 <p>
 <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/>
@@ -115,7 +122,7 @@ My interests lie at the intersection of
 <img src="https://img.shields.io/badge/Redux-764ABC?style=for-the-badge&logo=redux&logoColor=white"/>
 </p>
 
-<h3>⚙️ Backend Development</h3>
+<h3>Backend Development</h3>
 
 <p>
 <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white"/>
@@ -126,7 +133,7 @@ My interests lie at the intersection of
 <img src="https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=white"/>
 </p>
 
-<h3>🤖 AI / Machine Learning</h3>
+<h3>AI / Machine Learning</h3>
 
 <p>
 <img src="https://img.shields.io/badge/Scikit--Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white"/>
@@ -137,7 +144,7 @@ My interests lie at the intersection of
 <img src="https://img.shields.io/badge/Hugging_Face-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black"/>
 </p>
 
-<h3>🧠 Generative AI & LLM</h3>
+<h3>Generative AI & LLM</h3>
 
 <p>
 <img src="https://img.shields.io/badge/LLMs-412991?style=for-the-badge&logo=openai&logoColor=white"/>
@@ -147,7 +154,7 @@ My interests lie at the intersection of
 <img src="https://img.shields.io/badge/ChromaDB-FF6B6B?style=for-the-badge&logo=databricks&logoColor=white"/>
 </p>
 
-<h3>📊 Data Science & Analytics</h3>
+<h3>Data Science & Analytics</h3>
 
 <p>
 <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white"/>
@@ -159,7 +166,7 @@ My interests lie at the intersection of
 <img src="https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white"/>
 </p>
 
-<h3>🗄️ Databases</h3>
+<h3>Databases</h3>
 
 <p>
 <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white"/>
@@ -168,7 +175,7 @@ My interests lie at the intersection of
 <img src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white"/>
 </p>
 
-<h3>☁️ Cloud, DevOps & Deployment</h3>
+<h3>Cloud, DevOps & Deployment</h3>
 
 <p>
 <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white"/>
@@ -178,7 +185,7 @@ My interests lie at the intersection of
 <img src="https://img.shields.io/badge/Render-46E3B7?style=for-the-badge&logo=render&logoColor=black"/>
 </p>
 
-<h3>🔧 Tools & Development</h3>
+<h3>Tools & Development</h3>
 
 <p>
 <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white"/>
@@ -190,17 +197,17 @@ My interests lie at the intersection of
 
 ---
 
-<h2>🎯 What I'm Working Towards</h2>
+<h2>What I'm Working Towards</h2>
 
 <p align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=3000&pause=1000&color=8A2BE2&center=true&vCenter=true&width=800&lines=Building+Production-Ready+Applications;Mastering+Full-Stack+Development;Exploring+Advanced+AI+%26+ML;Building+GenAI+%26+RAG+Applications;Learning+Cloud+%26+System+Design" />
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=20&duration=3000&pause=1000&color=2F81F7&center=true&vCenter=true&width=850&lines=Building+Production-Ready+Applications;Mastering+Full-Stack+Development;Exploring+Advanced+AI+%26+ML;Building+GenAI+%26+RAG+Applications;Learning+Cloud+%26+System+Design" />
 
 </p>
 
 ---
 
-<h2>📈 GitHub Statistics</h2>
+<h2>GitHub Statistics</h2>
 
 <p align="center">
 
@@ -222,7 +229,7 @@ My interests lie at the intersection of
 
 ---
 
-<h2>🌐 Connect With Me</h2>
+<h2>Connect With Me</h2>
 
 <p>
 
@@ -244,10 +251,16 @@ My interests lie at the intersection of
 
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=20&duration=3500&pause=1000&color=00C853&center=true&vCenter=true&width=700&lines=Building+%7C+Learning+%7C+Innovating;Turning+Ideas+Into+Intelligent+Solutions;Code+%2B+Data+%2B+AI+%3D+Impact" />
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=19&duration=3500&pause=1000&color=2F81F7&center=true&vCenter=true&width=750&lines=Building+%7C+Learning+%7C+Innovating;Turning+Ideas+Into+Intelligent+Solutions;Code+%2B+Data+%2B+AI+%3D+Impact" />
 
 <br>
 
 <i>Turning ideas into intelligent solutions.</i>
 
 </div>
+
+<!-- Animated Footer -->
+
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&height=120&color=0:2C5364,50:203A43,100:0F2027&section=footer&animation=fadeIn" width="100%"/>
+</p>
