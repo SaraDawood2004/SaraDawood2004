@@ -1,25 +1,28 @@
- <img src="height=220&color=0:0F2027,50:203A43,100:2C5364&text=SARA%20DAWOOD%20S&fontSize=42&fontColor=ffffff&fontAlignY=38&animation=fadeIn&desc=Full-Stack%20Developer%20%7C%20AI%20%26%20Data%20Science%20Student&descAlignY=58&descSize=18" width="100%"/>
-</p>
+<!-- ========================= -->
+<!--         HEADER            -->
+<!-- ========================= -->
 
+<p align="center">
+  <img src="height=220&color=0:6A11CB,50:2575FC,100:00C6FF&text=SARA%20DAWOOD%20S&fontSize=42&fontColor=ffffff&fontAlignY=38&animation=fadeIn&desc=Full-Stack%20Developer%20%7C%20AI%20%26%20Data%20Science%20Student&descAlignY=58&descSize=18" width="100%"/>
+</p>
 
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=25&duration=3000&pause=1000&color=2F81F7&center=true&vCenter=true&width=850&lines=Hi%2C+I'm+Sara+Dawood+S;AI+%26+Data+Science+Student;;Full-Stack+Developer;Exploring+AI%2C+ML%2C+GenAI+%26+LLMs;Building+Intelligent+%26+Scalable+Applications" />
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=25&duration=3000&pause=1000&color=00C6FF&center=true&vCenter=true&width=850&lines=Hi%2C+I'm+Sara+Dawood+S" />
 
 <p>
   <strong>AI & Data Science Student | Full-Stack Developer | AI/ML Enthusiast</strong>
 </p>
 
-<p>
-Building intelligent applications by combining
-<strong>Artificial Intelligence</strong>,
-<strong>Data Science</strong>, and
-<strong>Full-Stack Development</strong>.
-</p>
-
 </div>
 
----
+<!-- ========================= -->
+<!--       SECTION LINE        -->
+<!-- ========================= -->
+
+<p>
+  <img src="https://capsule-render.vercel.app/api?type=rect&height=3&color=0:6A11CB,50:2575FC,100:00C6FF&section=header" width="100%"/>
+</p>
 
 <h2>About Me</h2>
 
@@ -30,7 +33,7 @@ building practical, scalable, and intelligent software solutions.
 
 <p>
 My interests lie at the intersection of
- <strong>Full-Stack Development</strong>.
+<strong>Full-Stack Development</strong>.
 <strong>Artificial Intelligence</strong>,
 <strong>Machine Learning</strong>,
 <strong>Generative AI</strong> and
@@ -47,53 +50,14 @@ My interests lie at the intersection of
   <li>Continuously learning and exploring new technologies</li>
 </ul>
 
----
 
-<h2>Expertise & Interests</h2>
+<!-- ========================= -->
+<!--       SECTION LINE        -->
+<!-- ========================= -->
 
-<table>
-<tr>
-
-<td width="50%" valign="top">
-
-<h3>Full-Stack Development</h3>
-
-<ul>
-<li>Frontend Development</li>
-<li>Backend Development</li>
-<li>RESTful APIs</li>
-<li>Authentication & Authorization</li>
-<li>Database Design</li>
-<li>API Integration</li>
-<li>Cloud Deployment</li>
-<li>Scalable Web Applications</li>
-</ul>
-
-</td>
-
-<td width="50%" valign="top">
-
-<h3>Artificial Intelligence</h3>
-
-<ul>
-<li>Machine Learning</li>
-<li>Deep Learning</li>
-<li>Generative AI</li>
-<li>Large Language Models</li>
-<li>Retrieval-Augmented Generation</li>
-<li>AI Agents</li>
-<li>Natural Language Processing</li>
-<li>Computer Vision</li>
-</ul>
-
-</td>
-
-
-
-</tr>
-</table>
-
----
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=rect&height=3&color=0:6A11CB,50:2575FC,100:00C6FF&section=header" width="100%"/>
+</p>
 
 <h2>Skills & Technologies</h2>
 
@@ -194,7 +158,13 @@ My interests lie at the intersection of
 <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white"/>
 </p>
 
----
+<!-- ========================= -->
+<!--       SECTION LINE        -->
+<!-- ========================= -->
+
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=rect&height=3&color=0:6A11CB,50:2575FC,100:00C6FF&section=header" width="100%"/>
+</p>
 
 <h2>GitHub Statistics</h2>
 
@@ -204,7 +174,13 @@ My interests lie at the intersection of
 
 </p>
 
----
+<!-- ========================= -->
+<!--       SECTION LINE        -->
+<!-- ========================= -->
+
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=rect&height=3&color=0:6A11CB,50:2575FC,100:00C6FF&section=header" width="100%"/>
+</p>
 
 <h2>Connect With Me</h2>
 
@@ -224,11 +200,13 @@ My interests lie at the intersection of
 
 </p>
 
----
+<!-- ========================= -->
+<!--       FINAL ANIMATION     -->
+<!-- ========================= -->
 
-<div align="center">
+<p align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=19&duration=3500&pause=1000&color=2F81F7&center=true&vCenter=true&width=750&lines=Building+%7C+Learning+%7C+Innovating;Turning+Ideas+Into+Intelligent+Solutions;Code+%2B+Data+%2B+AI+%3D+Impact" />
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=19&duration=3500&pause=1000&color=00C6FF&center=true&vCenter=true&width=750&lines=Building+%7C+Learning+%7C+Innovating;Turning+Ideas+Into+Intelligent+Solutions;Code+%2B+Data+%2B+AI+%3D+Impact" />
 
 <br>
 
@@ -236,8 +214,10 @@ My interests lie at the intersection of
 
 </div>
 
-<!-- Animated Footer -->
+<!-- ========================= -->
+<!--       ANIMATED FOOTER     -->
+<!-- ========================= -->
 
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&height=120&color=0:2C5364,50:203A43,100:0F2027&section=footer&animation=fadeIn" width="100%"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&height=120&color=0:00C6FF,50:2575FC,100:6A11CB&section=footer&animation=fadeIn" width="100%"/>
 </p>
