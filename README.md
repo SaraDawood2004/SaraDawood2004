@@ -21,34 +21,15 @@
 <!-- ========================= -->
 
 <p>
-  <img src="https://capsule-render.vercel.app/api?type=rect&height=3&color=0:6A11CB,50:2575FC,100:00C6FF&section=header" width="100%"/>
-</p>
-
-<h2>About Me</h2>
-
-<p>
 I'm a B.Tech Artificial Intelligence and Data Science student passionate about
-building practical, scalable, and intelligent software solutions.
-</p>
-
-<p>
-My interests lie at the intersection of
+building practical, scalable, and intelligent software solutions. My interests lie at the intersection of
 <strong>Full-Stack Development</strong>.
 <strong>Artificial Intelligence</strong>,
 <strong>Machine Learning</strong>,
 <strong>Generative AI</strong> and
 <strong>Data Science</strong> 
 </p>
-
-<ul>
-  <li>B.Tech Artificial Intelligence & Data Science</li>
-  <li>Focused on Full-Stack Development</li>
-  <li>Interested in AI, ML, GenAI, LLMs & RAG</li>
-  <li>Interested in Data Science & Analytics</li>
-  <li>Building modern web applications</li>
-  <li>Building real-world AI-powered solutions</li>
-  <li>Continuously learning and exploring new technologies</li>
-</ul>
+<ul> <li>Focused on Full-Stack Development</li> <li>Interested in AI, ML, GenAI, LLMs & RAG</li> <li>Interested in Data Science & Analytics</li> <li>Building modern web applications</li> <li>Building real-world AI-powered solutions</li> <li>Continuously learning and exploring new technologies</li> </ul>
 
 
 <!-- ========================= -->
