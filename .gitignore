@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Local portrait files
+source-photo.jpg
+source-photo.jpeg
+source-photo.png
+
+# Local prepared image
+data/prepped_photo.png
