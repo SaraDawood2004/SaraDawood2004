@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&height=220&color=0:0D1117,50:161B22,100:238636&text=SARA%20DAWOOD%20S&fontColor=39D353&fontSize=48&fontAlignY=38&desc=Full-Stack%20Developer%20%7C%20AI%20%26%20Data%20Science%20Student&descAlignY=58&descSize=18&animation=fadeIn" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&height=100&section=footer&color=0:0D1117,50:161B22,100:238636" width="100%"/>
 
 <br>
 
@@ -146,7 +146,7 @@ Turning ideas into real-world solutions.
 <img src="https://img.shields.io/badge/LinkedIn-0D1117?style=for-the-badge&logo=linkedin&logoColor=0A66C2" alt="LinkedIn"/>
 </a>
 
-<a href="mailto:saradawoodssd@gmail.com">
+<a href="mailto:mailtosaradawood@gmail.com">
 <img src="https://img.shields.io/badge/Email-0D1117?style=for-the-badge&logo=gmail&logoColor=EA4335" alt="Email"/>
 </a>
 
