@@ -1,204 +1,175 @@
-<!-- ========================= -->
-<!--         HEADER            -->
-<!-- ========================= -->
-
-<p align="center">
-  <img src="height=220&color=0:6A11CB,50:2575FC,100:00C6FF&text=SARA%20DAWOOD%20S&fontSize=42&fontColor=ffffff&fontAlignY=38&animation=fadeIn&desc=Full-Stack%20Developer%20%7C%20AI%20%26%20Data%20Science%20Student&descAlignY=58&descSize=18" width="100%"/>
-</p>
-
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=25&duration=3000&pause=1000&color=00C6FF&center=true&vCenter=true&width=850&lines=Hi%2C+I'm+Sara+Dawood+S" />
+<img src="https://capsule-render.vercel.app/api?type=waving&height=220&color=0:0D1117,50:161B22,100:238636&text=SARA%20DAWOOD%20S&fontColor=39D353&fontSize=48&fontAlignY=38&desc=Full-Stack%20Developer%20%7C%20AI%20%26%20Data%20Science%20Student&descAlignY=58&descSize=18&animation=fadeIn" width="100%"/>
 
-<p>
-  <strong>AI & Data Science Student | Full-Stack Developer | AI/ML Enthusiast</strong>
-</p>
+<br>
+
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=22&duration=2800&pause=900&color=39D353&center=true&vCenter=true&width=700&lines=%24+whoami;%3E+Sara+Dawood+S;%24+cat+role.txt;%3E+AI+%26+Data+Science+Student;%3E+Full-Stack+Developer;%3E+AI%2FML+Enthusiast" alt="Terminal typing animation"/>
 
 </div>
 
-<!-- ========================= -->
-<!--       SECTION LINE        -->
-<!-- ========================= -->
+---
+
+## `$ whoami`
+
+```text
+Sara Dawood S
+
+B.Tech Artificial Intelligence and Data Science Student
+Full-Stack Developer | AI/ML Enthusiast
+
+Building practical software.
+Exploring intelligent systems.
+Turning ideas into real-world solutions.
+```
+
+### `$ cat interests.txt`
+
+* Full-Stack Development
+* Artificial Intelligence & Machine Learning
+* Generative AI, LLMs & RAG
+* Data Science & Analytics
+* AI-powered applications
+* Modern web technologies
+
+---
+
+## `$ ./contributions.sh`
+
+<div align="center">
+
+<img src="./contrib-heatmap.svg" width="100%" alt="GitHub contribution heatmap"/>
+
+</div>
+
+---
+
+## `$ ./ascii_portrait.sh`
+
+<div align="center">
+
+<img src="./avi-ascii.svg" width="100%" alt="Animated ASCII portrait"/>
+
+</div>
+
+---
+
+## `$ ls skills/`
+
+### `languages`
 
 <p>
-I'm a B.Tech Artificial Intelligence and Data Science student passionate about
-building practical, scalable, and intelligent software solutions. My interests lie at the intersection of
-<strong>Full-Stack Development</strong>.
-<strong>Artificial Intelligence</strong>,
-<strong>Machine Learning</strong>,
-<strong>Generative AI</strong> and
-<strong>Data Science</strong> 
-</p>
-<ul> <li>Focused on Full-Stack Development</li> <li>Interested in AI, ML, GenAI, LLMs & RAG</li> <li>Interested in Data Science & Analytics</li> <li>Building modern web applications</li> <li>Building real-world AI-powered solutions</li> <li>Continuously learning and exploring new technologies</li> </ul>
-
-
-<!-- ========================= -->
-<!--       SECTION LINE        -->
-<!-- ========================= -->
-
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=rect&height=3&color=0:6A11CB,50:2575FC,100:00C6FF&section=header" width="100%"/>
+<img src="https://skillicons.dev/icons?i=cpp,python,java,javascript,typescript,sql" />
 </p>
 
-<h2>Skills & Technologies</h2>
-
-<h3>Programming Languages</h3>
+### `frontend`
 
 <p>
-<img src="https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white"/>
-<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
-<img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white"/>
-<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
-<img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white"/>
-<img src="https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white"/>
+<img src="https://skillicons.dev/icons?i=html,css,javascript,typescript,react,nextjs,tailwind,redux" />
 </p>
 
-<h3>Frontend Development</h3>
+### `backend`
 
 <p>
-<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/>
-<img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/>
-<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
-<img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white"/>
-<img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"/>
-<img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white"/>
-<img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white"/>
-<img src="https://img.shields.io/badge/Redux-764ABC?style=for-the-badge&logo=redux&logoColor=white"/>
+<img src="https://skillicons.dev/icons?i=nodejs,express,fastapi,flask" />
 </p>
 
-<h3>Backend Development</h3>
+### `ai_ml`
 
 <p>
-<img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white"/>
-<img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white"/>
-<img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white"/>
-<img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white"/>
-<img src="https://img.shields.io/badge/REST_API-FF6F00?style=for-the-badge&logo=fastapi&logoColor=white"/>
-<img src="https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=white"/>
+<img src="https://skillicons.dev/icons?i=python,pytorch,tensorflow" />
 </p>
 
-<h3>AI / Machine Learning</h3>
+**Libraries & Frameworks**
+
+`Scikit-Learn` · `Keras` · `XGBoost` · `Hugging Face`
+
+### `genai`
+
+`LLMs` · `RAG` · `LangChain` · `LangGraph` · `ChromaDB`
+
+### `data_science`
+
+`NumPy` · `Pandas` · `SciPy` · `Matplotlib` · `Seaborn` · `Plotly` · `Jupyter`
+
+### `databases`
 
 <p>
-<img src="https://img.shields.io/badge/Scikit--Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white"/>
-<img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white"/>
-<img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white"/>
-<img src="https://img.shields.io/badge/Keras-D00000?style=for-the-badge&logo=keras&logoColor=white"/>
-<img src="https://img.shields.io/badge/XGBoost-189AB4?style=for-the-badge&logo=xgboost&logoColor=white"/>
-<img src="https://img.shields.io/badge/Hugging_Face-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black"/>
+<img src="https://skillicons.dev/icons?i=mongodb,postgres,mysql,redis" />
 </p>
 
-<h3>Generative AI & LLM</h3>
+### `cloud_devops`
 
 <p>
-<img src="https://img.shields.io/badge/LLMs-412991?style=for-the-badge&logo=openai&logoColor=white"/>
-<img src="https://img.shields.io/badge/RAG-6C47FF?style=for-the-badge&logo=bookstack&logoColor=white"/>
-<img src="https://img.shields.io/badge/LangChain-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white"/>
-<img src="https://img.shields.io/badge/LangGraph-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white"/>
-<img src="https://img.shields.io/badge/ChromaDB-FF6B6B?style=for-the-badge&logo=databricks&logoColor=white"/>
+<img src="https://skillicons.dev/icons?i=docker,githubactions,aws,vercel" />
 </p>
 
-<h3>Data Science & Analytics</h3>
+`Render`
+
+### `tools`
 
 <p>
-<img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white"/>
-<img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white"/>
-<img src="https://img.shields.io/badge/SciPy-8CAAE6?style=for-the-badge&logo=scipy&logoColor=white"/>
-<img src="https://img.shields.io/badge/Matplotlib-11557C?style=for-the-badge&logo=python&logoColor=white"/>
-<img src="https://img.shields.io/badge/Seaborn-4C72B0?style=for-the-badge&logo=python&logoColor=white"/>
-<img src="https://img.shields.io/badge/Plotly-3F4F75?style=for-the-badge&logo=plotly&logoColor=white"/>
-<img src="https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white"/>
+<img src="https://skillicons.dev/icons?i=git,github,vscode,postman,figma" />
 </p>
 
-<h3>Databases</h3>
+---
 
-<p>
-<img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white"/>
-<img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white"/>
-<img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white"/>
-<img src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white"/>
-</p>
+## `$ github --stats`
 
-<h3>Cloud, DevOps & Deployment</h3>
+<div align="center">
 
-<p>
-<img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white"/>
-<img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white"/>
-<img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white"/>
-<img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white"/>
-<img src="https://img.shields.io/badge/Render-46E3B7?style=for-the-badge&logo=render&logoColor=black"/>
-</p>
+<img src="https://github-readme-stats.vercel.app/api?username=SaraDawood2004&show_icons=true&theme=github_dark&hide_border=true&rank_icon=github" height="170" alt="GitHub statistics"/>
 
-<h3>Tools & Development</h3>
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=SaraDawood2004&layout=compact&theme=github_dark&hide_border=true" height="170" alt="Top languages"/>
 
-<p>
-<img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white"/>
-<img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"/>
-<img src="https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white"/>
-<img src="https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white"/>
-<img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white"/>
-</p>
+</div>
 
-<!-- ========================= -->
-<!--       SECTION LINE        -->
-<!-- ========================= -->
+<br>
 
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=rect&height=3&color=0:6A11CB,50:2575FC,100:00C6FF&section=header" width="100%"/>
-</p>
+<div align="center">
 
-<h2>GitHub Statistics</h2>
+<img src="https://github-profile-trophy.vercel.app/?username=SaraDawood2004&theme=onestar&no-frame=true&no-bg=true&margin-w=8" width="90%" alt="GitHub trophies"/>
 
-<p align="center">
+</div>
 
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=SaraDawood2004&theme=tokyonight&hide_border=true" />
+---
 
-</p>
+## `$ connect --with-me`
 
-<!-- ========================= -->
-<!--       SECTION LINE        -->
-<!-- ========================= -->
-
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=rect&height=3&color=0:6A11CB,50:2575FC,100:00C6FF&section=header" width="100%"/>
-</p>
-
-<h2>Connect With Me</h2>
-
-<p>
+<div align="center">
 
 <a href="https://github.com/SaraDawood2004">
-<img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"/>
+<img src="https://img.shields.io/badge/GitHub-0D1117?style=for-the-badge&logo=github&logoColor=39D353" alt="GitHub"/>
 </a>
 
 <a href="https://www.linkedin.com/in/sara-s-d-219a5728b/">
-<img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/>
+<img src="https://img.shields.io/badge/LinkedIn-0D1117?style=for-the-badge&logo=linkedin&logoColor=0A66C2" alt="LinkedIn"/>
 </a>
 
 <a href="mailto:saradawoodssd@gmail.com">
-<img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white"/>
+<img src="https://img.shields.io/badge/Email-0D1117?style=for-the-badge&logo=gmail&logoColor=EA4335" alt="Email"/>
 </a>
 
-</p>
+</div>
 
-<!-- ========================= -->
-<!--       FINAL ANIMATION     -->
-<!-- ========================= -->
+---
 
-<p align="center">
+## `$ ./closing.sh`
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=19&duration=3500&pause=1000&color=00C6FF&center=true&vCenter=true&width=750&lines=Building+%7C+Learning+%7C+Innovating;Turning+Ideas+Into+Intelligent+Solutions;Code+%2B+Data+%2B+AI+%3D+Impact" />
+<div align="center">
 
-<br>
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=20&duration=2500&pause=700&color=39D353&center=true&vCenter=true&width=750&lines=%24+echo+%22Building%22;%3E+Building;%24+echo+%22Learning%22;%3E+Learning;%24+echo+%22Innovating%22;%3E+Innovating;%24+echo+%22Code+%2B+Data+%2B+AI+%3D+Impact%22;%3E+Code+%2B+Data+%2B+AI+%3D+Impact" alt="Closing terminal animation"/>
+
+<br><br>
 
 <i>Turning ideas into intelligent solutions.</i>
 
 </div>
 
-<!-- ========================= -->
-<!--       ANIMATED FOOTER     -->
-<!-- ========================= -->
+---
 
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&height=120&color=0:00C6FF,50:2575FC,100:6A11CB&section=footer&animation=fadeIn" width="100%"/>
-</p>
+<div align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=waving&height=100&section=footer&color=0:0D1117,50:161B22,100:238636" width="100%"/>
+
+</div>

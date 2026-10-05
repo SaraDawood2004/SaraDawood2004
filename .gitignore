@@ -1,13 +1,25 @@
-# Python
+# Python cache
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
+
+# Virtual environments
 .venv/
 venv/
+env/
 
-# Local portrait files
+# Local source photo
 source-photo.jpg
 source-photo.jpeg
 source-photo.png
 
-# Local prepared image
+# Generated local image
 data/prepped_photo.png
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/

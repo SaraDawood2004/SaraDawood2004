@@ -14,7 +14,7 @@ except ImportError:
 
 ROOT = Path(__file__).resolve().parent.parent
 
-DEFAULT_INPUT = ROOT / "source-photo.jpg"
+DEFAULT_INPUT = ROOT / "source-photo.jpeg"
 DEFAULT_OUTPUT = ROOT / "data" / "prepped_photo.png"
 
 
