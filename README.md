@@ -1,10 +1,10 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&height=100&section=footer&color=0:0D1117,50:161B22,100:238636" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&height=220&color=0:0D1117,50:161B22,100:238636&text=SARA%20DAWOOD%20S&fontColor=39D353&fontSize=48&fontAlignY=38&desc=Full-Stack%20Developer%20%7C%20AI%20%26%20Data%20Science%20Student&descAlignY=58&descSize=18&animation=fadeIn" width="100%"/>
 
 <br>
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=22&duration=2800&pause=900&color=39D353&center=true&vCenter=true&width=700&lines=%24+whoami;%3E+Sara+Dawood+S;%24+cat+role.txt;%3E+AI+%26+Data+Science+Student;%3E+Full-Stack+Developer;%3E+AI%2FML+Enthusiast" alt="Terminal typing animation"/>
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=22&duration=2800&pause=900&color=39D353&center=true&vCenter=true&width=800&lines=%3E+Hi%2C+I+am+Sara+Dawood+S;%24+whoami;%3E+AI+%26+Data+Science+Student;%3E+Full-Stack+Developer;%3E+AI%2FML+Enthusiast" alt="Terminal typing animation"/>
 
 </div>
 
@@ -77,20 +77,32 @@ Turning ideas into real-world solutions.
 ### `ai_ml`
 
 <p>
-<img src="https://skillicons.dev/icons?i=python,pytorch,tensorflow" />
+<img src="https://skillicons.dev/icons?i=python,pytorch,tensorflow,scikitlearn" />
 </p>
 
-**Libraries & Frameworks**
+### `libraries_frameworks`
 
-`Scikit-Learn` · `Keras` · `XGBoost` · `Hugging Face`
+<p>
+<img src="https://skillicons.dev/icons?i=sklearn,pytorch,tensorflow,opencv" />
+</p>
+
+`Keras` · `XGBoost` · `Hugging Face`
 
 ### `genai`
+
+<p>
+<img src="https://skillicons.dev/icons?i=python,langchain" />
+</p>
 
 `LLMs` · `RAG` · `LangChain` · `LangGraph` · `ChromaDB`
 
 ### `data_science`
 
-`NumPy` · `Pandas` · `SciPy` · `Matplotlib` · `Seaborn` · `Plotly` · `Jupyter`
+<p>
+<img src="https://skillicons.dev/icons?i=python,numpy,pandas,matplotlib,jupyter" />
+</p>
+
+`SciPy` · `Seaborn` · `Plotly`
 
 ### `databases`
 
@@ -159,10 +171,6 @@ Turning ideas into real-world solutions.
 <div align="center">
 
 <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=20&duration=2500&pause=700&color=39D353&center=true&vCenter=true&width=750&lines=%24+echo+%22Building%22;%3E+Building;%24+echo+%22Learning%22;%3E+Learning;%24+echo+%22Innovating%22;%3E+Innovating;%24+echo+%22Code+%2B+Data+%2B+AI+%3D+Impact%22;%3E+Code+%2B+Data+%2B+AI+%3D+Impact" alt="Closing terminal animation"/>
-
-<br><br>
-
-<i>Turning ideas into intelligent solutions.</i>
 
 </div>
 
