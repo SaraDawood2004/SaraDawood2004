@@ -1,10 +1,8 @@
 from pathlib import Path
 from datetime import date, timedelta
 import json
-import re
 
 import requests
-from bs4 import BeautifulSoup
 
 
 # ============================================================
@@ -14,20 +12,26 @@ from bs4 import BeautifulSoup
 USERNAME = "SaraDawood2004"
 
 ROOT = Path(__file__).resolve().parent.parent
-
 OUTPUT = ROOT / "data" / "contributions.json"
 
 URL = (
-    f"https://github.com/users/"
-    f"{USERNAME}/contributions"
+    f"https://github-contributions-api.jogruber.de/v4/"
+    f"{USERNAME}?y=all"
 )
 
 
 # ============================================================
-# FETCH GITHUB PAGE
+# FETCH ALL CONTRIBUTION HISTORY
 # ============================================================
 
-def fetch_page():
+def fetch_contributions():
+    print()
+    print(
+        f"Fetching ALL GitHub contribution history "
+        f"for {USERNAME}..."
+    )
+
+    print(f"URL: {URL}")
 
     headers = {
         "User-Agent": (
@@ -37,7 +41,7 @@ def fetch_page():
             "(KHTML, like Gecko) "
             "Chrome/140.0.0.0 Safari/537.36"
         ),
-        "Accept": "text/html",
+        "Accept": "application/json",
     }
 
     response = requests.get(
@@ -48,166 +52,52 @@ def fetch_page():
 
     response.raise_for_status()
 
-    return response.text
+    data = response.json()
 
-
-# ============================================================
-# FIND TOTAL CONTRIBUTIONS
-# ============================================================
-
-def extract_total_contributions(soup):
-
-    # GitHub usually contains something similar to:
-    #
-    # "106 contributions in the last year"
-    #
-    # Search the entire page text.
-
-    page_text = soup.get_text(
-        " ",
-        strip=True
-    )
-
-    patterns = [
-        r"([\d,]+)\s+contributions?\s+in\s+the\s+last\s+year",
-        r"([\d,]+)\s+contributions?",
-    ]
-
-    for pattern in patterns:
-
-        matches = re.findall(
-            pattern,
-            page_text,
-            re.IGNORECASE
+    if "contributions" not in data:
+        raise RuntimeError(
+            "The contribution API did not return "
+            "a contributions array."
         )
 
-        if matches:
-
-            numbers = []
-
-            for value in matches:
-
-                try:
-                    numbers.append(
-                        int(
-                            value.replace(",", "")
-                        )
-                    )
-                except ValueError:
-                    pass
-
-            if numbers:
-
-                # The yearly total is normally
-                # the largest matching value.
-                return max(numbers)
-
-    return 0
+    return data
 
 
 # ============================================================
-# EXTRACT CONTRIBUTION CALENDAR
-# ============================================================
-
-def extract_days(soup):
-
-    days = []
-
-    cells = soup.select(
-        "td[data-date]"
-    )
-
-    for cell in cells:
-
-        day = cell.get(
-            "data-date"
-        )
-
-        if not day:
-            continue
-
-        level = cell.get(
-            "data-level",
-            "0"
-        )
-
-        try:
-
-            level = int(level)
-
-        except (
-            ValueError,
-            TypeError
-        ):
-
-            level = 0
-
-        # IMPORTANT:
-        #
-        # data-level is NOT the exact number of
-        # contributions.
-        #
-        # It represents GitHub's contribution
-        # intensity from 0 to 4.
-        #
-        # We therefore store it separately.
-
-        days.append(
-            {
-                "date": day,
-                "count": 0,
-                "level": level
-            }
-        )
-
-    return days
-
-
-# ============================================================
-# CALCULATE STREAKS FROM CONTRIBUTION LEVEL
+# CALCULATE STREAKS
 # ============================================================
 
 def calculate_streaks(days):
-
-    sorted_days = sorted(
-        days,
-        key=lambda x: x["date"]
-    )
-
     active_dates = {
         item["date"]
-        for item in sorted_days
-        if item["level"] > 0
+        for item in days
+        if item.get("count", 0) > 0
     }
+
+    if not active_dates:
+        return 0, 0
+
+    sorted_dates = sorted(
+        date.fromisoformat(day)
+        for day in active_dates
+    )
 
     # --------------------------------------------------------
     # Current streak
     # --------------------------------------------------------
 
     current_streak = 0
-
     today = date.today()
-
     check = today
 
-    # If today's contribution is zero,
-    # GitHub streak may actually end yesterday.
-    #
-    # So check today first, then yesterday.
-
+    # GitHub's streak logic allows today to be inactive
+    # while yesterday can still be the current streak.
     if check.isoformat() not in active_dates:
-
-        check -= timedelta(
-            days=1
-        )
+        check -= timedelta(days=1)
 
     while check.isoformat() in active_dates:
-
         current_streak += 1
-
-        check -= timedelta(
-            days=1
-        )
+        check -= timedelta(days=1)
 
     # --------------------------------------------------------
     # Longest streak
@@ -215,32 +105,15 @@ def calculate_streaks(days):
 
     longest_streak = 0
     running = 0
+    previous = None
 
-    previous_date = None
-
-    for item in sorted_days:
-
-        if item["level"] <= 0:
-
-            running = 0
-            previous_date = None
-
-            continue
-
-        current_date = date.fromisoformat(
-            item["date"]
-        )
-
+    for current in sorted_dates:
         if (
-            previous_date is not None
-            and current_date
-            == previous_date + timedelta(days=1)
+            previous is not None
+            and current == previous + timedelta(days=1)
         ):
-
             running += 1
-
         else:
-
             running = 1
 
         longest_streak = max(
@@ -248,42 +121,37 @@ def calculate_streaks(days):
             running
         )
 
-        previous_date = current_date
+        previous = current
 
-    return (
-        current_streak,
-        longest_streak
-    )
+    return current_streak, longest_streak
 
 
 # ============================================================
-# MONTHLY ACTIVITY
+# CALCULATE YEARLY STATISTICS
 # ============================================================
 
-def calculate_monthly_activity(days):
-
-    monthly = {}
+def calculate_year_stats(days):
+    yearly = {}
 
     for item in days:
+        year = item["date"][:4]
 
-        month = item["date"][:7]
-
-        if month not in monthly:
-
-            monthly[month] = {
-                "active_days": 0,
-                "activity_level": 0
+        if year not in yearly:
+            yearly[year] = {
+                "total": 0,
+                "active_days": 0
             }
 
-        if item["level"] > 0:
-
-            monthly[month]["active_days"] += 1
-
-        monthly[month]["activity_level"] += (
-            item["level"]
+        count = int(
+            item.get("count", 0)
         )
 
-    return monthly
+        yearly[year]["total"] += count
+
+        if count > 0:
+            yearly[year]["active_days"] += 1
+
+    return yearly
 
 
 # ============================================================
@@ -291,120 +159,123 @@ def calculate_monthly_activity(days):
 # ============================================================
 
 def main():
+    data = fetch_contributions()
 
-    print()
-    print(
-        f"Fetching contributions for "
-        f"{USERNAME}..."
+    raw_days = data.get(
+        "contributions",
+        []
     )
 
-    print(
-        f"URL: {URL}"
-    )
-
-    # --------------------------------------------------------
-    # Fetch page
-    # --------------------------------------------------------
-
-    html = fetch_page()
-
-    soup = BeautifulSoup(
-        html,
-        "html.parser"
-    )
-
-    # --------------------------------------------------------
-    # Extract total
-    # --------------------------------------------------------
-
-    total = extract_total_contributions(
-        soup
-    )
-
-    # --------------------------------------------------------
-    # Extract calendar
-    # --------------------------------------------------------
-
-    days = extract_days(
-        soup
-    )
-
-    if not days:
-
+    if not raw_days:
         raise RuntimeError(
-            "No contribution calendar cells "
-            "were found."
+            "No contribution data was returned."
         )
 
     # --------------------------------------------------------
-    # Calculate streaks
+    # Normalize contribution data
     # --------------------------------------------------------
 
-    (
-        current_streak,
-        longest_streak
-    ) = calculate_streaks(
-        days
-    )
+    days = []
 
-    # --------------------------------------------------------
-    # Monthly activity
-    # --------------------------------------------------------
+    for item in raw_days:
+        contribution_date = item.get("date")
 
-    monthly = calculate_monthly_activity(
-        days
-    )
+        if not contribution_date:
+            continue
 
-    # --------------------------------------------------------
-    # Best activity day
-    #
-    # Since GitHub does not expose exact counts
-    # in the current calendar cells, use the
-    # highest activity level.
-    # --------------------------------------------------------
-
-    best_day = None
-
-    if days:
-
-        best_day = max(
-            days,
-            key=lambda x: x["level"]
+        count = int(
+            item.get("count", 0)
         )
 
+        level = int(
+            item.get("level", 0)
+        )
+
+        days.append(
+            {
+                "date": contribution_date,
+                "count": count,
+                "level": level
+            }
+        )
+
+    # Oldest → newest
+    days.sort(
+        key=lambda x: x["date"]
+    )
+
     # --------------------------------------------------------
-    # Output
+    # Yearly totals returned by the API
+    # --------------------------------------------------------
+
+    api_year_totals = {
+        str(year): int(total)
+        for year, total in data.get(
+            "total",
+            {}
+        ).items()
+        if str(year).isdigit()
+    }
+
+    # --------------------------------------------------------
+    # Calculate additional statistics
+    # --------------------------------------------------------
+
+    current_streak, longest_streak = calculate_streaks(
+        days
+    )
+
+    yearly_stats = calculate_year_stats(
+        days
+    )
+
+    years = sorted(
+        {
+            item["date"][:4]
+            for item in days
+        }
+    )
+
+    # --------------------------------------------------------
+    # Find highest contribution day
+    # --------------------------------------------------------
+
+    best_day = max(
+        days,
+        key=lambda item: item["count"]
+    )
+
+    # --------------------------------------------------------
+    # Build final JSON
     # --------------------------------------------------------
 
     result = {
-
         "username": USERNAME,
 
-        "generated_at":
-            date.today().isoformat(),
+        "generated_at": date.today().isoformat(),
 
-        "total_contributions":
-            total,
+        "years": years,
 
-        "days":
-            days,
+        "total_contributions": sum(
+            api_year_totals.values()
+        ),
+
+        "yearly_totals": api_year_totals,
+
+        "days": days,
 
         "stats": {
+            "total": sum(
+                api_year_totals.values()
+            ),
 
-            "total":
-                total,
+            "current_streak": current_streak,
 
-            "current_streak":
-                current_streak,
+            "longest_streak": longest_streak,
 
-            "longest_streak":
-                longest_streak,
+            "best_day": best_day,
 
-            "best_day":
-                best_day,
-
-            "monthly_totals":
-                monthly
+            "yearly": yearly_stats
         }
     }
 
@@ -430,17 +301,45 @@ def main():
     # --------------------------------------------------------
 
     print()
+    print("========================================")
+    print(" GitHub Contribution History")
+    print("========================================")
 
     print(
-        "Contribution data saved."
+        f"Years found: {len(years)}"
     )
 
     print(
-        f"Days: {len(days)}"
+        f"Range: {years[0]} → {years[-1]}"
     )
 
+    print()
+
+    for year in years:
+        total = api_year_totals.get(
+            year,
+            0
+        )
+
+        active_days = yearly_stats.get(
+            year,
+            {}
+        ).get(
+            "active_days",
+            0
+        )
+
+        print(
+            f"{year}: "
+            f"{total} contributions "
+            f"({active_days} active days)"
+        )
+
+    print()
+
     print(
-        f"Total contributions: {total}"
+        f"All-time contributions: "
+        f"{sum(api_year_totals.values())}"
     )
 
     print(
@@ -453,13 +352,13 @@ def main():
         f"{longest_streak}"
     )
 
-    if best_day:
+    print(
+        f"Best day: "
+        f"{best_day['date']} "
+        f"({best_day['count']} contributions)"
+    )
 
-        print(
-            f"Highest activity day: "
-            f"{best_day['date']} "
-            f"(level {best_day['level']})"
-        )
+    print()
 
     print(
         f"Output: {OUTPUT}"

@@ -1,10 +1,8 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&height=220&color=0:0D1117,50:161B22,100:238636&text=SARA%20DAWOOD%20S&fontColor=39D353&fontSize=48&fontAlignY=38&desc=Full-Stack%20Developer%20%7C%20AI%20%26%20Data%20Science%20Student&descAlignY=58&descSize=18&animation=fadeIn" width="100%"/>
-
 <br>
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=22&duration=2800&pause=900&color=39D353&center=true&vCenter=true&width=800&lines=%3E+Hi%2C+I+am+Sara+Dawood+S;%24+whoami;%3E+AI+%26+Data+Science+Student;%3E+Full-Stack+Developer;%3E+AI%2FML+Enthusiast" alt="Terminal typing animation"/>
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=22&duration=2800&pause=900&color=39D353&center=true&vCenter=true&width=800&lines=%3E+Hi%2C+I+am+Sara+Dawood+S;" alt="Terminal typing animation"/>
 
 </div>
 

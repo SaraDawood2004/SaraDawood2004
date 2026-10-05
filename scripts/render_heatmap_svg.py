@@ -19,7 +19,7 @@ USERNAME = "SaraDawood2004"
 STATIC = os.getenv("STATIC", "0") == "1"
 
 
-# GitHub-style colors
+# GitHub contribution colors
 COLORS = {
     0: "#161B22",
     1: "#0E4429",
@@ -34,9 +34,7 @@ COLORS = {
 # ============================================================
 
 def load_data():
-
     if not INPUT.exists():
-
         raise FileNotFoundError(
             f"Contribution data not found: {INPUT}\n"
             "Run fetch_contributions.py first."
@@ -46,55 +44,43 @@ def load_data():
         "r",
         encoding="utf-8"
     ) as file:
-
         return json.load(file)
 
 
 # ============================================================
-# PREPARE 53-WEEK CALENDAR
+# PREPARE ONE YEAR
 # ============================================================
 
-def prepare_calendar(data):
-
-    days = data.get(
-        "days",
-        []
-    )
-
-    if not days:
-
-        raise RuntimeError(
-            "No contribution days found."
-        )
-
+def prepare_year(days, year):
     lookup = {
         item["date"]: item
         for item in days
     }
 
-    # --------------------------------------------------------
-    # GitHub's calendar is approximately 53 weeks.
-    # --------------------------------------------------------
+    first_day = date(
+        year,
+        1,
+        1
+    )
 
-    end_date = max(
-        date.fromisoformat(
-            item["date"]
+    last_day = date(
+        year,
+        12,
+        31
+    )
+
+    # Move backwards to Sunday.
+    start_date = first_day - timedelta(
+        days=(first_day.weekday() + 1) % 7
+    )
+
+    # Move forwards to Saturday.
+    end_date = last_day + timedelta(
+        days=(
+            6 - (
+                (last_day.weekday() + 1) % 7
+            )
         )
-        for item in days
-    )
-
-    start_date = end_date - timedelta(
-        days=364
-    )
-
-    # Align start to Sunday.
-    start_date -= timedelta(
-        days=(start_date.weekday() + 1) % 7
-    )
-
-    # Align end to Saturday.
-    end_date += timedelta(
-        days=(6 - ((end_date.weekday() + 1) % 7))
     )
 
     weeks = []
@@ -102,11 +88,9 @@ def prepare_calendar(data):
     current = start_date
 
     while current <= end_date:
-
         week = []
 
         for row in range(7):
-
             current_day = current + timedelta(
                 days=row
             )
@@ -116,6 +100,12 @@ def prepare_calendar(data):
             )
 
             if item:
+                count = int(
+                    item.get(
+                        "count",
+                        0
+                    )
+                )
 
                 level = int(
                     item.get(
@@ -123,9 +113,8 @@ def prepare_calendar(data):
                         0
                     )
                 )
-
             else:
-
+                count = 0
                 level = 0
 
             level = max(
@@ -138,17 +127,13 @@ def prepare_calendar(data):
 
             week.append(
                 {
-                    "date":
-                        current_day.isoformat(),
-
-                    "level":
-                        level
+                    "date": current_day.isoformat(),
+                    "count": count,
+                    "level": level
                 }
             )
 
-        weeks.append(
-            week
-        )
+        weeks.append(week)
 
         current += timedelta(
             days=7
@@ -158,11 +143,10 @@ def prepare_calendar(data):
 
 
 # ============================================================
-# SVG ESCAPING
+# XML ESCAPING
 # ============================================================
 
 def escape_xml(value):
-
     return (
         str(value)
         .replace("&", "&amp;")
@@ -174,48 +158,62 @@ def escape_xml(value):
 
 
 # ============================================================
+# YEAR TOTAL
+# ============================================================
+
+def get_year_total(data, year):
+    yearly_totals = data.get(
+        "yearly_totals",
+        {}
+    )
+
+    return int(
+        yearly_totals.get(
+            str(year),
+            0
+        )
+    )
+
+
+# ============================================================
 # MONTH LABELS
 # ============================================================
 
-def get_month_labels(weeks):
-
+def get_month_labels(weeks, year):
     labels = []
 
-    previous_month = None
-
-    for index, week in enumerate(weeks):
-
-        first_day = date.fromisoformat(
-            week[0]["date"]
+    for month in range(
+        1,
+        13
+    ):
+        first_day = date(
+            year,
+            month,
+            1
         )
 
-        # Check all days in the week.
-        for item in week:
-
-            current_day = date.fromisoformat(
-                item["date"]
+        # Find the week containing
+        # the first day of the month.
+        for index, week in enumerate(weeks):
+            week_start = date.fromisoformat(
+                week[0]["date"]
             )
 
-            month = current_day.month
+            week_end = date.fromisoformat(
+                week[-1]["date"]
+            )
 
             if (
-                month != previous_month
-                and current_day.day <= 7
+                week_start
+                <= first_day
+                <= week_end
             ):
-
                 labels.append(
                     {
-                        "week":
-                            index,
-
-                        "month":
-                            calendar.month_abbr[
-                                month
-                            ]
+                        "week": index,
+                        "month": calendar.month_abbr[month]
                     }
                 )
-
-                previous_month = month
 
                 break
 
@@ -223,75 +221,96 @@ def get_month_labels(weeks):
 
 
 # ============================================================
-# SVG GENERATION
+# MAIN SVG GENERATOR
 # ============================================================
 
 def generate_svg(data):
-
-    weeks = prepare_calendar(
-        data
+    days = data.get(
+        "days",
+        []
     )
 
-    stats = data.get(
-        "stats",
-        {}
+    if not days:
+        raise RuntimeError(
+            "No contribution data found."
+        )
+
+    years = data.get(
+        "years",
+        []
     )
 
-    total = data.get(
-        "total_contributions",
-        stats.get("total", 0)
-    )
+    if not years:
+        years = sorted(
+            {
+                item["date"][:4]
+                for item in days
+            }
+        )
 
-    current_streak = stats.get(
-        "current_streak",
-        0
-    )
+    years = [
+        int(year)
+        for year in years
+    ]
 
-    longest_streak = stats.get(
-        "longest_streak",
-        0
-    )
+    years.sort()
 
     # --------------------------------------------------------
     # Dimensions
     # --------------------------------------------------------
 
     CELL = 11
-    GAP = 4
+    GAP = 3
 
-    LEFT = 35
-    TOP = 32
-    RIGHT = 20
-    BOTTOM = 45
+    LEFT = 45
+    RIGHT = 25
 
-    WIDTH = (
+    TOP = 55
+
+    YEAR_TITLE_HEIGHT = 25
+
+    CALENDAR_HEIGHT = (
+        7 * (CELL + GAP)
+    )
+
+    YEAR_SPACING = 42
+
+    LEGEND_HEIGHT = 35
+
+    width = (
         LEFT
-        + len(weeks) * (CELL + GAP)
+        + 53 * (CELL + GAP)
         + RIGHT
     )
 
-    HEIGHT = (
+    calendar_block_height = (
+        YEAR_TITLE_HEIGHT
+        + CALENDAR_HEIGHT
+        + YEAR_SPACING
+    )
+
+    height = (
         TOP
-        + 7 * (CELL + GAP)
-        + BOTTOM
+        + len(years) * calendar_block_height
+        + LEGEND_HEIGHT
     )
 
     # --------------------------------------------------------
-    # SVG
+    # SVG start
     # --------------------------------------------------------
 
     svg = []
 
     svg.append(
         f'''<svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="{WIDTH}"
-        height="{HEIGHT}"
-        viewBox="0 0 {WIDTH} {HEIGHT}"
-        role="img"
-        aria-label="{escape_xml(total)} GitHub contributions in the last year"
-        >
-        '''
+xmlns="http://www.w3.org/2000/svg"
+width="{width}"
+height="{height}"
+viewBox="0 0 {width} {height}"
+role="img"
+aria-label="GitHub contribution history for {escape_xml(USERNAME)}"
+>
+'''
     )
 
     # --------------------------------------------------------
@@ -300,266 +319,329 @@ def generate_svg(data):
 
     svg.append(
         f'''
-        <rect
-            x="0"
-            y="0"
-            width="{WIDTH}"
-            height="{HEIGHT}"
-            rx="10"
-            fill="#0D1117"
-        />
-        '''
+<rect
+x="0"
+y="0"
+width="{width}"
+height="{height}"
+rx="12"
+fill="#0D1117"
+/>
+'''
     )
 
     # --------------------------------------------------------
-    # Header
+    # Main title
     # --------------------------------------------------------
+
+    all_time_total = int(
+        data.get(
+            "total_contributions",
+            0
+        )
+    )
 
     svg.append(
         f'''
-        <text
-            x="{LEFT}"
-            y="18"
-            fill="#C9D1D9"
-            font-family="Arial, Helvetica, sans-serif"
-            font-size="12"
-            font-weight="600"
-        >
-            {escape_xml(total)} contributions in the last year
-        </text>
-        '''
+<text
+x="{LEFT}"
+y="28"
+fill="#C9D1D9"
+font-family="Arial, Helvetica, sans-serif"
+font-size="15"
+font-weight="600"
+>
+GitHub Contribution History
+</text>
+'''
+    )
+
+    svg.append(
+        f'''
+<text
+x="{LEFT}"
+y="45"
+fill="#8B949E"
+font-family="Arial, Helvetica, sans-serif"
+font-size="10"
+>
+{all_time_total} contributions across {len(years)} years
+</text>
+'''
     )
 
     # --------------------------------------------------------
-    # Weekday labels
-    # --------------------------------------------------------
-
-    weekday_labels = {
-        1: "Mon",
-        3: "Wed",
-        5: "Fri",
-    }
-
-    for row, label in weekday_labels.items():
-
-        y = (
-            TOP
-            + row * (CELL + GAP)
-            + 9
-        )
-
-        svg.append(
-            f'''
-            <text
-                x="2"
-                y="{y}"
-                fill="#8B949E"
-                font-family="Arial, Helvetica, sans-serif"
-                font-size="9"
-            >
-                {label}
-            </text>
-            '''
-        )
-
-    # --------------------------------------------------------
-    # Month labels
-    # --------------------------------------------------------
-
-    month_labels = get_month_labels(
-        weeks
-    )
-
-    for label in month_labels:
-
-        week_index = label["week"]
-
-        x = (
-            LEFT
-            + week_index * (CELL + GAP)
-        )
-
-        svg.append(
-            f'''
-            <text
-                x="{x}"
-                y="{TOP - 8}"
-                fill="#8B949E"
-                font-family="Arial, Helvetica, sans-serif"
-                font-size="9"
-            >
-                {escape_xml(label["month"])}
-            </text>
-            '''
-        )
-
-    # --------------------------------------------------------
-    # Contribution squares
+    # Animation counter
     # --------------------------------------------------------
 
     animation_index = 0
 
-    for week_index, week in enumerate(weeks):
-
-        for row, item in enumerate(week):
-
-            level = item["level"]
-
-            x = (
-                LEFT
-                + week_index * (CELL + GAP)
-            )
-
-            y = (
-                TOP
-                + row * (CELL + GAP)
-            )
-
-            fill = COLORS.get(
-                level,
-                COLORS[0]
-            )
-
-            tooltip = (
-                f"{item['date']} — "
-                f"activity level {level}"
-            )
-
-            if STATIC:
-
-                animation = ""
-
-            else:
-
-                delay = (
-                    animation_index * 0.012
-                )
-
-                animation = f'''
-                <animate
-                    attributeName="opacity"
-                    values="0;1"
-                    dur="0.35s"
-                    begin="{delay:.3f}s"
-                    fill="freeze"
-                />
-                '''
-
-            svg.append(
-                f'''
-                <g>
-                    <title>
-                        {escape_xml(tooltip)}
-                    </title>
-
-                    <rect
-                        x="{x}"
-                        y="{y}"
-                        width="{CELL}"
-                        height="{CELL}"
-                        rx="2"
-                        fill="{fill}"
-                        opacity="0"
-                    >
-                        {animation}
-                    </rect>
-                </g>
-                '''
-            )
-
-            animation_index += 1
-
     # --------------------------------------------------------
-    # Footer statistics
+    # Render each year
     # --------------------------------------------------------
 
-    footer_y = (
-        TOP
-        + 7 * (CELL + GAP)
-        + 22
-    )
+    for year_index, year in enumerate(years):
+        weeks = prepare_year(
+            days,
+            year
+        )
 
-    svg.append(
-        f'''
-        <text
-            x="{LEFT}"
-            y="{footer_y}"
-            fill="#8B949E"
-            font-family="Arial, Helvetica, sans-serif"
-            font-size="9"
-        >
-            Current streak: {current_streak}
-        </text>
-        '''
-    )
+        year_total = get_year_total(
+            data,
+            year
+        )
 
-    svg.append(
-        f'''
-        <text
-            x="{LEFT + 105}"
-            y="{footer_y}"
-            fill="#8B949E"
-            font-family="Arial, Helvetica, sans-serif"
-            font-size="9"
-        >
-            Longest streak: {longest_streak}
-        </text>
-        '''
-    )
+        block_top = (
+            TOP
+            + year_index
+            * calendar_block_height
+        )
 
-    # --------------------------------------------------------
-    # Legend
-    # --------------------------------------------------------
+        title_y = block_top + 14
 
-    legend_x = WIDTH - 165
-    legend_y = footer_y - 8
+        calendar_top = (
+            block_top
+            + YEAR_TITLE_HEIGHT
+        )
 
-    svg.append(
-        f'''
-        <text
-            x="{legend_x - 25}"
-            y="{legend_y + 9}"
-            fill="#8B949E"
-            font-family="Arial, Helvetica, sans-serif"
-            font-size="9"
-        >
-            Less
-        </text>
-        '''
-    )
+        # ----------------------------------------------------
+        # Year title
+        # ----------------------------------------------------
 
-    for level in range(5):
-
-        x = (
-            legend_x
-            + level * (CELL + GAP)
+        svg.append(
+            f'''
+<text
+x="{LEFT}"
+y="{title_y}"
+fill="#39D353"
+font-family="Arial, Helvetica, sans-serif"
+font-size="13"
+font-weight="600"
+>
+{year}
+</text>
+'''
         )
 
         svg.append(
             f'''
-            <rect
-                x="{x}"
-                y="{legend_y}"
-                width="{CELL}"
-                height="{CELL}"
-                rx="2"
-                fill="{COLORS[level]}"
-            />
-            '''
+<text
+x="{LEFT + 42}"
+y="{title_y}"
+fill="#8B949E"
+font-family="Arial, Helvetica, sans-serif"
+font-size="9"
+>
+{year_total} contributions
+</text>
+'''
+        )
+
+        # ----------------------------------------------------
+        # Weekday labels
+        # ----------------------------------------------------
+
+        weekday_labels = {
+            1: "Mon",
+            3: "Wed",
+            5: "Fri",
+        }
+
+        for row, label in weekday_labels.items():
+            y = (
+                calendar_top
+                + row * (CELL + GAP)
+                + 9
+            )
+
+            svg.append(
+                f'''
+<text
+x="2"
+y="{y}"
+fill="#8B949E"
+font-family="Arial, Helvetica, sans-serif"
+font-size="8"
+>
+{label}
+</text>
+'''
+            )
+
+        # ----------------------------------------------------
+        # Month labels
+        # ----------------------------------------------------
+
+        month_labels = get_month_labels(
+            weeks,
+            year
+        )
+
+        for label in month_labels:
+            week_index = label["week"]
+
+            x = (
+                LEFT
+                + week_index
+                * (CELL + GAP)
+            )
+
+            svg.append(
+                f'''
+<text
+x="{x}"
+y="{calendar_top - 7}"
+fill="#8B949E"
+font-family="Arial, Helvetica, sans-serif"
+font-size="8"
+>
+{escape_xml(label["month"])}
+</text>
+'''
+            )
+
+        # ----------------------------------------------------
+        # Contribution cells
+        # ----------------------------------------------------
+
+        for week_index, week in enumerate(weeks):
+            for row, item in enumerate(week):
+                current_date = date.fromisoformat(
+                    item["date"]
+                )
+
+                # Don't display days outside
+                # the selected year.
+                if current_date.year != year:
+                    level = 0
+                    count = 0
+                else:
+                    level = item["level"]
+                    count = item["count"]
+
+                x = (
+                    LEFT
+                    + week_index
+                    * (CELL + GAP)
+                )
+
+                y = (
+                    calendar_top
+                    + row
+                    * (CELL + GAP)
+                )
+
+                fill = COLORS.get(
+                    level,
+                    COLORS[0]
+                )
+
+                tooltip = (
+                    f"{item['date']} - "
+                    f"{count} contributions"
+                )
+
+                if STATIC:
+                    rect = f'''
+<rect
+x="{x}"
+y="{y}"
+width="{CELL}"
+height="{CELL}"
+rx="2"
+fill="{fill}"
+opacity="1"
+>
+<title>{escape_xml(tooltip)}</title>
+</rect>
+'''
+                else:
+                    delay = (
+                        animation_index
+                        * 0.008
+                    )
+
+                    rect = f'''
+<rect
+x="{x}"
+y="{y}"
+width="{CELL}"
+height="{CELL}"
+rx="2"
+fill="{fill}"
+opacity="0"
+>
+<title>{escape_xml(tooltip)}</title>
+<animate
+attributeName="opacity"
+values="0;1"
+dur="0.25s"
+begin="{delay:.3f}s"
+fill="freeze"
+/>
+</rect>
+'''
+
+                svg.append(rect)
+
+                animation_index += 1
+
+    # --------------------------------------------------------
+    # Bottom legend
+    # --------------------------------------------------------
+
+    legend_y = (
+        height - 24
+    )
+
+    svg.append(
+        f'''
+<text
+x="{LEFT}"
+y="{legend_y + 9}"
+fill="#8B949E"
+font-family="Arial, Helvetica, sans-serif"
+font-size="9"
+>
+Less
+</text>
+'''
+    )
+
+    legend_x = LEFT + 28
+
+    for level in range(5):
+        x = (
+            legend_x
+            + level
+            * (CELL + GAP)
+        )
+
+        svg.append(
+            f'''
+<rect
+x="{x}"
+y="{legend_y}"
+width="{CELL}"
+height="{CELL}"
+rx="2"
+fill="{COLORS[level]}"
+/>
+'''
         )
 
     svg.append(
         f'''
-        <text
-            x="{legend_x + 5 * (CELL + GAP) + 2}"
-            y="{legend_y + 9}"
-            fill="#8B949E"
-            font-family="Arial, Helvetica, sans-serif"
-            font-size="9"
-        >
-            More
-        </text>
-        '''
+<text
+x="{legend_x + 5 * (CELL + GAP) + 3}"
+y="{legend_y + 9}"
+fill="#8B949E"
+font-family="Arial, Helvetica, sans-serif"
+font-size="9"
+>
+More
+</text>
+'''
     )
 
     # --------------------------------------------------------
@@ -570,9 +652,7 @@ def generate_svg(data):
         "</svg>"
     )
 
-    return "\n".join(
-        svg
-    )
+    return "\n".join(svg)
 
 
 # ============================================================
@@ -580,15 +660,15 @@ def generate_svg(data):
 # ============================================================
 
 def main():
-
+    print()
     print(
-        "Reading contribution data..."
+        "Reading all contribution data..."
     )
 
     data = load_data()
 
     print(
-        "Rendering contribution heatmap..."
+        "Rendering multi-year contribution history..."
     )
 
     svg = generate_svg(
@@ -602,7 +682,12 @@ def main():
 
     print()
     print(
-        "Contribution heatmap created."
+        "Multi-year contribution heatmap created."
+    )
+
+    print(
+        f"Years rendered: "
+        f"{len(data.get('years', []))}"
     )
 
     print(
@@ -615,6 +700,10 @@ def main():
 
     print()
 
+
+# ============================================================
+# RUN
+# ============================================================
 
 if __name__ == "__main__":
     main()
