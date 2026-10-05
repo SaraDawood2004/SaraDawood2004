@@ -2,7 +2,7 @@
 
 <br>
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=22&duration=2800&pause=900&color=39D353&center=true&vCenter=true&width=800&lines=%3E+Hi%2C+I+am+Sara+Dawood+S;" alt="Terminal typing animation"/>
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=22&duration=2800&pause=900&color=39D353&center=true&vCenter=true&width=800&lines=%3E+Hi%2C+I+am+Sara+Dawood+S" alt="Terminal typing animation"/>
 
 </div>
 
@@ -14,31 +14,29 @@
 Sara Dawood S
 
 B.Tech Artificial Intelligence and Data Science Student
+
 Full-Stack Developer | AI/ML Enthusiast
 
 Building practical software.
+
 Exploring intelligent systems.
+
 Turning ideas into real-world solutions.
 ```
 
 ### `$ cat interests.txt`
 
 * Full-Stack Development
+
 * Artificial Intelligence & Machine Learning
+
 * Generative AI, LLMs & RAG
+
 * Data Science & Analytics
+
 * AI-powered applications
+
 * Modern web technologies
-
----
-
-## `$ ./contributions.sh`
-
-<div align="center">
-
-<img src="./contrib-heatmap.svg" width="100%" alt="GitHub contribution heatmap"/>
-
-</div>
 
 ---
 
@@ -124,21 +122,15 @@ Turning ideas into real-world solutions.
 
 ---
 
-## `$ github --stats`
+## `$ cat resume.txt`
 
 <div align="center">
 
-<img src="https://github-readme-stats.vercel.app/api?username=SaraDawood2004&show_icons=true&theme=github_dark&hide_border=true&rank_icon=github" height="170" alt="GitHub statistics"/>
+<a href="./Sara_Dawood_Resume.pdf">
 
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=SaraDawood2004&layout=compact&theme=github_dark&hide_border=true" height="170" alt="Top languages"/>
+<img src="https://img.shields.io/badge/VIEW%20RESUME-39D353?style=for-the-badge&logo=readme&logoColor=0D1117" alt="View Resume"/>
 
-</div>
-
-<br>
-
-<div align="center">
-
-<img src="https://github-profile-trophy.vercel.app/?username=SaraDawood2004&theme=onestar&no-frame=true&no-bg=true&margin-w=8" width="90%" alt="GitHub trophies"/>
+</a>
 
 </div>
 
@@ -149,15 +141,21 @@ Turning ideas into real-world solutions.
 <div align="center">
 
 <a href="https://github.com/SaraDawood2004">
+
 <img src="https://img.shields.io/badge/GitHub-0D1117?style=for-the-badge&logo=github&logoColor=39D353" alt="GitHub"/>
+
 </a>
 
 <a href="https://www.linkedin.com/in/sara-s-d-219a5728b/">
+
 <img src="https://img.shields.io/badge/LinkedIn-0D1117?style=for-the-badge&logo=linkedin&logoColor=0A66C2" alt="LinkedIn"/>
+
 </a>
 
 <a href="mailto:mailtosaradawood@gmail.com">
+
 <img src="https://img.shields.io/badge/Email-0D1117?style=for-the-badge&logo=gmail&logoColor=EA4335" alt="Email"/>
+
 </a>
 
 </div>
